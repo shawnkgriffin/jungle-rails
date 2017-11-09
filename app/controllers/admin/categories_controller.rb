@@ -17,5 +17,11 @@ class Admin::CategoriesController < ApplicationController
       render :new
     end
   end
+  def category_params
+    params.require(:category).permit(
+      :name
+    )
+  end
+
 
 end
