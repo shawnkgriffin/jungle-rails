@@ -1,12 +1,14 @@
 <section class="orders-show">
 
   <header class="page-header">
-    <h1><%=@subject %></h1>
+    <h1>Order #<%= @order.id %></h1>
     <h4>Thank you for your order!</h4>
   </header>
 
+  
+
   <header class="page-header">
-    <h3>Email: <%=@to%></h3>
+    <h3>Email: <%=@order.email%></h3>
   </header>
 
   <div class="panel panel-default items">
