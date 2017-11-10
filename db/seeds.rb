@@ -132,5 +132,9 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts "Reviews "
+p1 = Product.first
+u1 = User.first
+p1.reviews.create(user: u1, description: "great product", rating: 1)
 
 puts "DONE!"
