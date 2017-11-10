@@ -1,8 +1,16 @@
 <section class="cart-show">
 
+<% if cart.length == 0 %>
+  <header class="page-header">
+    <h1>My Cart is empty. Why not fill it up?</h1>
+  </header>
+  <a class="btn btn-danger" href="/">Home</a>
+  <% else %>
+
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
+
 
   <div class="panel panel-default items">
     <table class="table table-bordered">
@@ -33,6 +41,7 @@
     </table>
   </div>
 
+  
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -49,5 +58,5 @@
       <% end %>
     </div>
   </div>
-
+  <% end %>
 </section>
