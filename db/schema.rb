@@ -35,12 +35,49 @@ ActiveRecord::Schema.define(version: 20171110222437) do
   add_index "line_items", ["order_id"], name: "index_line_items_on_order_id", using: :btree
   add_index "line_items", ["product_id"], name: "index_line_items_on_product_id", using: :btree
 
+  create_table "maps", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at"
+    t.integer  "user_id"
+  end
+
+  create_table "maps_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "map_id"
+    t.boolean "favourite"
+    t.boolean "changed"
+  end
+
+  create_table "migrations", force: :cascade do |t|
+    t.string   "name",           limit: 255
+    t.integer  "batch"
+    t.datetime "migration_time"
+  end
+
+  create_table "migrations_lock", id: false, force: :cascade do |t|
+    t.integer "is_locked"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer  "total_cents"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "stripe_charge_id"
     t.string   "email"
+  end
+
+  create_table "pins", force: :cascade do |t|
+    t.string   "latitude",    limit: 255
+    t.string   "longitude",   limit: 255
+    t.string   "title",       limit: 255
+    t.string   "description", limit: 255
+    t.string   "image",       limit: 255
+    t.string   "url",         limit: 255
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "version"
+    t.integer  "type_id"
+    t.integer  "map_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -63,6 +100,11 @@ ActiveRecord::Schema.define(version: 20171110222437) do
     t.integer  "rating"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "icon", limit: 255
+    t.string "type", limit: 255
   end
 
   create_table "users", force: :cascade do |t|

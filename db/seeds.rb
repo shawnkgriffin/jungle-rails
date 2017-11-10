@@ -132,9 +132,10 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+u1 = User.create(first: "Home", last: "Simpsone", email: "homer@simpsons.com", 
+password_digest:"$2a$10$O.bXm2IQpdsCCYWKrI9s.ez9Z5.lJi.ujLp/eAxe0Ejo4UgOpf4lu")
 puts "Reviews "
 p1 = Product.first
-u1 = User.first
 p1.reviews.create(user: u1, description: "great product", rating: 1)
 
 puts "DONE!"
