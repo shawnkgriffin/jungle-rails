@@ -143,6 +143,7 @@ puts "Reviews "
 Review.destroy_all
 
 p1 = Product.first
-p1.reviews.create(user: u1, description: "great product", rating: 1)
+p1.reviews.create(user: u1, description: "great product", rating: 4)
+p1.reviews.create(user: u1, description: "crappy product", rating: 1)
 
 puts "DONE!"
