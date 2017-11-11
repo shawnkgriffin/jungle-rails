@@ -1,17 +1,13 @@
 <article class="review">
 
-  <dl class="dl-horizontal">
-          <dt>Name</dt>
-          <dd><%= "#{User.find(review.user_id).last}, #{User.find(review.user_id).first}" %></dd>
-          <dt>Description</dt>
-          <dd><%= review.description %></dd>
-          <dt>Created</dt>
-          <dd><%= review.created_at %></dd>
-          <dt>Rating</dt>
-          <dd><%= review.rating %></dd>
-          <%if current_user && (current_user.id == review.user_id) %>
-          <td>
-            <%= link_to fa_icon('trash'),  review_path(review.id),class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
-          </td>
-          <%end%>
-</article>
+  <tr>
+      <td><%= "#{User.find(review.user_id).last}, #{User.find(review.user_id).first}" %></td>
+      <td><%= review.description %></td>
+      <td><%= review.rating %></td>
+      <td><%= review.created_at.strftime("%b %d %y") %></td>
+      <td>
+        <%if current_user && (current_user.id == review.user_id) %>
+          <%= link_to fa_icon('trash'),  review_path(review.id),class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+        <%end%>
+      </td>
+</tr>

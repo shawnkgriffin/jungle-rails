@@ -56,9 +56,21 @@
 
         <%- if @product.reviews.length > 0 %>
         <h1>Reviews</h1>
-        <div class="reviews">
-          <%= render @product.reviews.order('created_at DESC') %>
-        </div>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Rating</th>
+              <th>Created</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @product.reviews.order('created_at DESC') %>
+          </tbody>
+        </table>
+        
         <%-end%>
       </div>
     </div>
