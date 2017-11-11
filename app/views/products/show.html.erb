@@ -23,6 +23,34 @@
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
         </dl>
+        
+        <p2>Create a review:</p2>
+        <% @review = Review.new %>
+        <%= form_for(@review, url: product_reviews_path(@product.id) ) do |form| %>
+          <% if form.object.errors.any? %>
+            <div class="alert alert-danger">
+              <strong>The following errors prevented saving:</strong>
+              <ul>
+                <% form.object.errors.full_messages.each do |error| %>
+                  <li><%= error %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="form-group">
+            <%= form.label :description %>
+            <%= form.text_area :description, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :rating %>
+            <%= form.number_field :rating, class: 'form-control' %>
+          </div>
+
+          <%= form.submit 'Create Review', class: 'btn btn-primary' %>
+        <% end %>
+
         <%- if @product.reviews.length > 0 %>
         <h1>Reviews</h1>
         <div class="reviews">
