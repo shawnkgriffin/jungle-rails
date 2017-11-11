@@ -46,12 +46,12 @@
         </li>
        
        <% if current_user %>
-            <li><%= current_user.first%></li>
-            <li><%= link_to "Logout", '/logout'%></li>
-          <% else %>
-            <li><%= link_to 'Login', '/login' %></li>
-            <li><%= link_to 'Signup', '/signup' %></li>
-          <% end %>
+          <li><%= current_user.first%></li>
+          <li><%= link_to "Logout", '/logout'%></li>
+        <% else %>
+          <li><%= link_to 'Login', '/login' %></li>
+          <li><%= link_to 'Signup', '/signup' %></li>
+        <% end %>
       </ul>
     </div>
   </div>
