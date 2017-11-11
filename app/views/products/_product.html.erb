@@ -9,14 +9,16 @@
     <%= product.description %>
   </p>
   <% reviews = product.reviews %>
+  
   <% if reviews.length > 0 %>
+
     <% if reviews.length == 1 %>
       <p> 
-      <%="#{reviews.length} review at #{reviews.first.rating}"%>
+      <%="#{reviews.length} review with a rating of  #{reviews.first.rating}"%>
       </p>
     <%else%>
       <p> 
-      <%="#{reviews.length} reviews average #{reviews.rating.average}"%>
+      <%="#{reviews.length} reviews, average rating of #{reviews.average(:rating)}"%>
       </p>
     <%end%>
     <%end%>
