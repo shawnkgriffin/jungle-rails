@@ -1,9 +1,15 @@
 <h1>Signup!</h1>
 
-<%= form_for :user, url: '/users' do |f| %>
-
-  First: <%= f.text_field :first %>
-  Last: <%= f.text_field :last %>
+<%= form_for :user, url: '/users' :html => {:class => "form-horizontal center"} do |f| %>
+  <div class="form-group">
+    <%= f.label :fname, "First name:", class: "col-md-4 control-label" %>
+    <div class="col-md-8">
+      <%= f.text_field :first, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+  L ast: <%= f.text_field :last %>
+    </div>
   Email: <%= f.text_field :email %>
   Password: <%= f.password_field :password %>
   Password Confirmation: <%= f.password_field :password_confirmation %>
