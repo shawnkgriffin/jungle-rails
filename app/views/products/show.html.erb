@@ -23,6 +23,16 @@
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
         </dl>
+        <%- if @product.reviews.length > 0 %>
+        <dl class="dl-horizontal">
+          <dt>Name</dt>
+          <dd><%= "#{User.find(@product.reviews.first.user_id).last}, #{User.find(@product.reviews.first.user_id).first}" %></dd>
+          <dt>Description</dt>
+          <dd><%= @product.reviews.first.description %></dd>
+          <dt>Rating</dt>
+          <dd><%= @product.reviews.first.rating %></dd>
+        </dl>
+        <%-end%>
       </div>
     </div>
 

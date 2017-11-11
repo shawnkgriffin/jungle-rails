@@ -136,7 +136,7 @@ puts "delete all users and add Homer"
 
 User.destroy_all
 
-u1 = User.create(first: "Home", last: "Simpson", email: "homer@simpsons.com", 
+u1 = User.create(first: "Homer", last: "Simpson", email: "homer@simpsons.com", 
 password_digest:"$2a$10$O.bXm2IQpdsCCYWKrI9s.ez9Z5.lJi.ujLp/eAxe0Ejo4UgOpf4lu")
 
 puts "Reviews "
