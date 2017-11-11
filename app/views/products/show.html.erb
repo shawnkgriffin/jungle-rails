@@ -54,7 +54,7 @@
         <%- if @product.reviews.length > 0 %>
         <h1>Reviews</h1>
         <div class="reviews">
-          <%= render @product.reviews %>
+          <%= render @product.reviews.order('created_at DESC') %>
         </div>
         <%-end%>
       </div>

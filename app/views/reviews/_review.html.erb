@@ -5,6 +5,8 @@
           <dd><%= "#{User.find(review.user_id).last}, #{User.find(review.user_id).first}" %></dd>
           <dt>Description</dt>
           <dd><%= review.description %></dd>
+          <dt>Created</dt>
+          <dd><%= review.created_at %></dd>
           <dt>Rating</dt>
           <dd><%= review.rating %></dd>
 </article>
