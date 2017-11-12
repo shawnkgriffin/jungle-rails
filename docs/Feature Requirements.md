@@ -26,7 +26,7 @@ Bonus: All admin controllers inherit from Admin::BaseController (or similarly na
 - [X] Major: As a Visitor I can sign up for a user account with my e-mail, password, first name and last name
 - [X] Major: As a Visitor I can sign in using my e-mail and password
 - [X] Major: As a User I can log out from any page
-- [ ] Major: As a User I cannot sign up with an existing e-mail address (uniqueness validation)
+- [X] Major: As a User I cannot sign up with an existing e-mail address (uniqueness validation)
 - [X] Major: Passwords are not stored as plain text in the database. Instead, has_secure_password is used in the User model, leveraging the bcrypt gem
 ### Enhancement: Order Details Page
 
