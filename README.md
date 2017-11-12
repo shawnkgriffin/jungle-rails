@@ -6,9 +6,9 @@ The functional requirements, and their status can be found [here](https://github
 
 
 ## Screen Shots
-![Products](https://github.com/shawnkgriffin/jungle-rails/blob/master/docs/Screenshot_products.png) Main
-![Reviews](https://github.com/shawnkgriffin/jungle-rails/blob/master/docs/Screenshot_product_reviews.png) Insert
-![Add category](https://github.com/shawnkgriffin/jungle-rails/blob/master/docs/Screenshot_Categories.png) Add
+![Products](https://github.com/shawnkgriffin/jungle-rails/blob/master/docs/Screenshot_products.png) Products
+![Reviews](https://github.com/shawnkgriffin/jungle-rails/blob/master/docs/Screenshot_product_reviews.png) Reviews
+![Add category](https://github.com/shawnkgriffin/jungle-rails/blob/master/docs/Screenshot_Categories.png) Add Category
 
 
 
