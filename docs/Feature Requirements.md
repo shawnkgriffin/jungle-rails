@@ -44,7 +44,7 @@ Since you don't know their name information, it can just have a generic greeting
 ### Bug: Missing Admin Security
 
 - [X] Major: User must enter HTTP auth login/password to access admin functionality
-Bonus: Should ideally be implemented in an abstract top-level class for admin controllers (e.g., Admin::BaseController which the other concrete admin controllers inherit)
+- [ ] Bonus: Should ideally be implemented in an abstract top-level class for admin controllers (e.g., Admin::BaseController which the other concrete admin controllers inherit)
 ### Bug: Checking Out with Empty Cart
 
 - [X] Major: When the cart is empty and the user goes to the carts#show page, instead of displaying the contents and a stripe checkout button, display a friendly message about how it is empty and link to the home page
