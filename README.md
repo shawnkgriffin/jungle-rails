@@ -2,13 +2,13 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
-The functional requirements, and their status can be found [here](https://github.com/SpinnyFinny/maps-wiki/blob/master/docs/Functional%20Requirements.md). 
+The functional requirements, and their status can be found [here](https://github.com/shawnkgriffin/jungle-rails/blob/master/docs/Feature%20Requirements.md). 
 
 
 ## Screen Shots
-![Products](https://github.com/SpinnyFinny/maps-wiki/blob/master/docs/images/TrikiMaps%20show%20marker.png) Main
-![Reviews](https://github.com/SpinnyFinny/maps-wiki/blob/master/docs/images/TrikiMaps%20Insert%20Marker.png) Insert
-![Add category](https://github.com/SpinnyFinny/maps-wiki/blob/master/docs/images/TrikiMaps%20Edit%20Marker.png) Add
+![Products](https://github.com/shawnkgriffin/jungle-rails/blob/master/docs/Screenshot_products.png) Main
+![Reviews](https://github.com/shawnkgriffin/jungle-rails/blob/master/docs/Screenshot_product_reviews.png) Insert
+![Add category](https://github.com/shawnkgriffin/jungle-rails/blob/master/docs/Screenshot_Categories.png) Add
 
 
 

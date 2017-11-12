@@ -34,10 +34,10 @@ Bonus: All admin controllers inherit from Admin::BaseController (or similarly na
 - [X] Major: The final amount for the order is displayed
 - [X] Minor: The email that was used to place the order is displayed
 - [X] Minor: As a Visitor I can place an order (i.e. without logging in and therefore without an e-mail address). The original functionality from the inherited code (even though it is not realistic) should therefore not be suppressed.
-Feature: Email Receipt
+### Feature: Email Receipt
 
 - [X] Major: The e-mail content should be (minimally) formatted with HTML
-It does not need any layout styling and should be mostly, if not all, text (i.e. make do with <p>, <hr>, <h1>, <br> and other simple formatting tags)
+It does not need any layout styling and should be mostly, if not all, text (i.e. make do with `<p>, <hr>, <h1>, <br>` and other simple formatting tags)
 Since you don't know their name information, it can just have a generic greeting
 - [X] Major: It should list the total as well as each line item in the order
 - [X] Minor: The Order ID should be in the subject line
