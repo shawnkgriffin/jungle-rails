@@ -5,13 +5,15 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: {case_sensitive: false}, on: :create
   validates :password, confirmation:true,  length: { minimum: 8 },on: :create
 
-  def authenticate_with_credentials(email, password)
-    user = User.find_by_email(email.strip.downcase)
-    # If the user exists AND the password entered is correct.
-    if user && user.authenticate(password)
-      return user
-    else
-      return nil
+  class << self
+    def authenticate_with_credentials(email, password)
+      user = User.find_by_email(email.strip.downcase)
+      # If the user exists AND the password entered is correct.
+      if user && user.authenticate(password)
+        return user
+      else
+        return nil
+      end
     end
   end
 end

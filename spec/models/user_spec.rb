@@ -43,31 +43,31 @@ RSpec.describe User, type: :model do
       
       it 'authenticate with credentials should fail with invalid credentials' do
         @user = User.create(first: "bart", last: "simpson", email: "bart@simpsons.com", password: 'cooldude', password_confirmation: 'cooldude')
-        @user = @user.authenticate_with_credentials("nonexistent@email.com", "password")
+        @user = User.authenticate_with_credentials "nonexistent@email.com", "password"
         expect(@user).to be nil # check for presence of error
       end
       
       it 'authenticate with credentials should succeed with valid credentials' do
         @user = User.create(first: "bart", last: "simpson", email: "bart@simpsons.com", password: 'cooldude', password_confirmation: 'cooldude')
-        @user = @user.authenticate_with_credentials("bart@simpsons.com","cooldude")
+        @user = User.authenticate_with_credentials "bart@simpsons.com","cooldude"
         expect(@user).to be_a User # check for presence of error
       end
       
       it 'authenticate with leading white space on email' do
         @user = User.create(first: "bart", last: "simpson", email: "bart@simpsons.com", password: 'cooldude', password_confirmation: 'cooldude')
-        @user = @user.authenticate_with_credentials("     bart@simpsons.com","cooldude")
+        @user = User.authenticate_with_credentials "     bart@simpsons.com","cooldude"
         expect(@user).to be_a User # check for presence of error
       end
 
       it 'authenticate with trailing white space on email' do
         @user = User.create(first: "bart", last: "simpson", email: "bart@simpsons.com", password: 'cooldude', password_confirmation: 'cooldude')
-        @user = @user.authenticate_with_credentials("bart@simpsons.com     ","cooldude")
+        @user = User.authenticate_with_credentials "bart@simpsons.com     ","cooldude"
         expect(@user).to be_a User # check for presence of error
       end
 
       it 'authenticate with mixed case on email' do
         @user = User.create(first: "bart", last: "simpson", email: "bart@simpsons.com", password: 'cooldude', password_confirmation: 'cooldude')
-        @user = @user.authenticate_with_credentials("bart@SIMPsoNs.com","cooldude")
+        @user = User.authenticate_with_credentials "bart@SIMPsoNs.com","cooldude"
         expect(@user).to be_a User # check for presence of error
       end
     end
