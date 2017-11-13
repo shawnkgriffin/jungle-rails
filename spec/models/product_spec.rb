@@ -5,7 +5,7 @@ RSpec.describe Product, type: :model do
     it 'should succeed with all required parameters' do
       @category = Category.create(name:'new category')
       @product = Product.create(name: 'product', price: 50, quantity: 4, category: @category)
-      expect(@product).to be_present # check for presence of error
+      expect(@product).to be_a Product # check for presence of error
     end
     
     it 'should have a name' do
