@@ -35,11 +35,12 @@ RSpec.describe User, type: :model do
         expect(@user.errors[:password]).to include("is too short (minimum is 8 characters)") # check for presence of error
       end
       
-      it 'should have a category' do
-        # @category = Category.create(name:'new category')
-        # @product = Product.create(name: 'product', price: 50, quantity: 4)
-        # expect(@product.errors[:category]).to include("can't be blank") # check for presence of error
+      it 'emails must be unique' do
+        @user = User.create(first: "bart", last: "simpson", email: "bart@simpsons.com", password: 'cooldude', password_confirmation: 'cooldude')
+        @user = User.create(first: "bart", last: "simpson", email: "bart@SImpsons.com", password: 'cooldude', password_confirmation: 'cooldude')
+        expect(@user.errors[:email]).to include("has already been taken") # check for presence of error
       end
-    end
+      
+        end
   end
   
