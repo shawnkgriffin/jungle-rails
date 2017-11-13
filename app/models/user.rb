@@ -6,6 +6,12 @@ class User < ActiveRecord::Base
   validates :password, confirmation:true,  length: { minimum: 8 },on: :create
 
   def authenticate_with_credentials(email, password)
-    nil
+    user = User.find_by_email(email)
+    # If the user exists AND the password entered is correct.
+    if user && user.authenticate(email,password)
+      return user
+    else
+      return nil
+    end
   end
 end
