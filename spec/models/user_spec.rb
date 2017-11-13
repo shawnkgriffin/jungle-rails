@@ -41,6 +41,18 @@ RSpec.describe User, type: :model do
         expect(@user.errors[:email]).to include("has already been taken") # check for presence of error
       end
       
-        end
+      it 'authenticate with credentials should fail with invalid credentials' do
+        @user = User.create(first: "bart", last: "simpson", email: "bart@simpsons.com", password: 'cooldude', password_confirmation: 'cooldude')
+        @user = @user.authenticate_with_credentials("nonexistent@email.com", "password")
+        expect(@user).to be nil # check for presence of error
+      end
+      
+      it 'authenticate with credentials should succeed with valid credentials' do
+        @user = User.create(first: "bart", last: "simpson", email: "bart@simpsons.com", password: 'cooldude', password_confirmation: 'cooldude')
+        @user = @user.authenticate_with_credentials("bart@simpsons.com","cooldude")
+        expect(@user).to be_a User # check for presence of error
+      end
+     
+    end
   end
   
